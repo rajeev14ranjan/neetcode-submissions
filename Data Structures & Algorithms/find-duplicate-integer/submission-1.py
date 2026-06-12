@@ -1,0 +1,30 @@
+# Find the Duplicate Number
+# You are given an array of integers nums containing n + 1 integers. Each integer in nums is in the range [1, n] inclusive.
+
+# There is exactly one repeated integer in nums, and every other integer appears at most once.
+
+# Return the repeated integer.
+
+# Example 1:
+
+# Input: nums = [1,2,3,2,2]
+
+# Output: 2
+# Example 2:
+
+# Input: nums = [1,2,3,4,4]
+
+# Output: 4
+# Follow-up: Can you solve the problem without modifying the array nums and using O(1) extra space?
+# [Too many ways to solve - Look at the soln tab for 7 ways]
+# https://neetcode.io/problems/find-duplicate-integer/solution
+
+
+class Solution:
+    def findDuplicate(self, nums: List[int]) -> int:
+        for n in nums:
+            absn = abs(n)
+            if nums[absn] < 0:
+                return absn
+            else:
+                nums[absn] *= -1
